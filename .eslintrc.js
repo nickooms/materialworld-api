@@ -6,5 +6,6 @@ module.exports = {
         'object-curly-newline': ["error", { "multiline": true }],
         'import/extensions': 'ignorePackages',
         'no-plusplus': 0,
+        'react/jsx-filename-extension': 0
     }
 };

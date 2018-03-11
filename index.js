@@ -7,6 +7,7 @@ import HttpCache from './src/HttpCache';
 import Migrations from './src/Migrations';
 import dbPromise, { Feature } from './src/DB';
 import WFS from './src/WFS';
+import SVG from './src/SVG';
 
 const PORT = 3333;
 
@@ -57,7 +58,10 @@ app.get('/location/:city/:street', async (req, res) => {
   const keys = { formattedAddress: FormattedAddress, locationType: LocationType };
   let object = await Street.get(keys);
   if (object) {
-    res.send(a(`/street/${object.id}/wbn`, `${city} ${street} WBN`));
+    res.send(`
+      ${h1(`${city} ${street}`)}
+      ${a(`/street/${object.id}/wbn`, 'WBN')}
+    `);
     return;
   }
   const { Location, BoundingBox: { LowerLeft, UpperRight } } = result;
@@ -79,7 +83,10 @@ app.get('/location/:city/:street', async (req, res) => {
     lowerLeft,
     upperRight,
   });
-  res.send(a(`/street/${object.id}/wbn`, `${city} ${street} WBN`));
+  res.send(`
+    ${h1(`${city} ${street}`)}
+    ${a(`/street/${object.id}/wbn`, 'WBN')}
+  `);
 });
 
 app.get('/street/:id/wbn', async (req, res) => {
@@ -93,7 +100,11 @@ app.get('/street/:id/wbn', async (req, res) => {
   wfs.features.forEach((feature) => {
     Feature.create(feature);
   });
-  res.json(wfs);
+  const width = upperRight.x - lowerLeft.x;
+  const height = upperRight.y - lowerLeft.y;
+  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(SVG.fromFeatures(wfs.features, viewBox));
 });
 
 app.listen(PORT);
