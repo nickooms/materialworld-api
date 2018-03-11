@@ -6,7 +6,7 @@ import Polygon from './components/Polygon';
 
 const SVGGenerator = {
   fromFeatures(features, viewBox) {
-    const polygons = features.map(({ geometry, properties }) => {
+    const polygons = features.map(({ id, geometry, properties }) => {
       const { LBLTYPE } = properties;
       const fill = LBLTYPE === 'wegsegment' ? '#CCCCCC' : '#B7B7B7';
       const { coordinates } = geometry;
@@ -14,7 +14,7 @@ const SVGGenerator = {
       points.pop();
       const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
       return (
-        <Polygon points={pointList} fill={fill} />
+        <Polygon key={id} points={pointList} fill={fill} />
       );
     });
     const svg = (
