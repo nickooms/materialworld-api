@@ -5,7 +5,7 @@ import Point from './src/Point';
 import Street from './src/Street';
 import HttpCache from './src/HttpCache';
 import Migrations from './src/Migrations';
-import dbPromise, { Feature } from './src/DB';
+import dbPromise, { Feature, RoadConnection } from './src/DB';
 import WFS from './src/WFS';
 import SVG from './src/SVG';
 
@@ -56,12 +56,19 @@ app.get('/location/:city/:street', async (req, res) => {
   const { FormattedAddress, LocationType } = result;
   const db = await dbPromise;
   const keys = { formattedAddress: FormattedAddress, locationType: LocationType };
+  const streetLayers = object => res.send(`
+    ${h1(`${city} ${street}`)}
+    ${a(`/street/${object.id}/wbn`, 'WBN')}
+    ${a(`/street/${object.id}/wvb`, 'WVB')}
+    ${a(`/street/${object.id}/wkn`, 'WKN')}
+  `);
   let object = await Street.get(keys);
   if (object) {
-    res.send(`
+    streetLayers(object);
+    /* res.send(`
       ${h1(`${city} ${street}`)}
       ${a(`/street/${object.id}/wbn`, 'WBN')}
-    `);
+    `); */
     return;
   }
   const { Location, BoundingBox: { LowerLeft, UpperRight } } = result;
@@ -83,10 +90,11 @@ app.get('/location/:city/:street', async (req, res) => {
     lowerLeft,
     upperRight,
   });
-  res.send(`
+  streetLayers(object);
+  /* res.send(`
     ${h1(`${city} ${street}`)}
     ${a(`/street/${object.id}/wbn`, 'WBN')}
-  `);
+  `); */
 });
 
 app.get('/street/:id/wbn', async (req, res) => {
@@ -104,7 +112,78 @@ app.get('/street/:id/wbn', async (req, res) => {
   const height = upperRight.y - lowerLeft.y;
   const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
-  res.send(SVG.fromFeatures(wfs.features, viewBox));
+  res.send(SVG.fromWBN(wfs.features, viewBox));
+});
+
+app.get('/street/:id/wvb', async (req, res) => {
+  const { id } = req.params;
+  const street = await Street.byId(id);
+  const json = await street.toJSON();
+  const { lowerLeft, upperRight } = json;
+  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
+  const layer = 'WVB';
+  const wfs = await WFS.getFeature({ bbox, layer });
+  // console.log(wfs);
+  const roadConnections = await Promise.all(wfs.features.map((feature) => {
+    // console.log(feature);
+    const { geometry, properties } = feature;
+    const roadConnection = {
+      id: parseInt(feature.id.split('.')[1], 10),
+      uidn: properties.UIDN,
+      oidn: properties.OIDN,
+      leftRoadId: properties.LSTRNMID,
+      rightRoadId: properties.RSTRNMID,
+      geometry: geometry.coordinates,
+    };
+    return RoadConnection.create(roadConnection);
+    /* return RoadConnection.findOrCreate({
+      where: { id: roadConnection.id },
+      defaults: roadConnection
+    })
+      .spread((roadConn, created) => {
+        console.log(roadConn.get({
+          plain: true,
+        }));
+        console.log(created);
+      }); */
+  }));
+  /* wfs.features.forEach((feature) => {
+    Feature.create(feature);
+  }); */
+  const width = upperRight.x - lowerLeft.x;
+  const height = upperRight.y - lowerLeft.y;
+  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(SVG.fromWVB(roadConnections, viewBox));
+});
+
+app.get('/street/:id/wkn', async (req, res) => {
+  const { id } = req.params;
+  const street = await Street.byId(id);
+  const json = await street.toJSON();
+  const { lowerLeft, upperRight } = json;
+  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
+  const layer = 'WKN';
+  const wfs = await WFS.getFeature({ bbox, layer });
+  console.log(wfs);
+  /* const roadConnections = await Promise.all(wfs.features.map((feature) => {
+    // console.log(feature);
+    const { geometry, properties } = feature;
+    const roadConnection = {
+      id: parseInt(feature.id.split('.')[1], 10),
+      uidn: properties.UIDN,
+      oidn: properties.OIDN,
+      leftRoadId: properties.LSTRNMID,
+      rightRoadId: properties.RSTRNMID,
+      geometry: geometry.coordinates,
+    };
+    return RoadConnection.create(roadConnection);
+  })); */
+  const width = upperRight.x - lowerLeft.x;
+  const height = upperRight.y - lowerLeft.y;
+  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(SVG.fromWKN(wfs.features, viewBox));
 });
 
 app.listen(PORT);

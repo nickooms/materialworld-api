@@ -20,6 +20,51 @@ export const Feature = sequelize.define('feature', {
   properties: Sequelize.JSON,
 }, OPTIONS);
 
+export const Road = sequelize.define('road', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
+  name: Sequelize.STRING,
+}, OPTIONS);
+
+export const City = sequelize.define('city', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
+  name: Sequelize.STRING,
+}, OPTIONS);
+
+City.hasMany(Road, { as: 'Roads' });
+
+export const RoadConnection = sequelize.define('road_connection', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
+  uidn: Sequelize.INTEGER,
+  oidn: Sequelize.INTEGER,
+  leftRoadId: {
+    type: Sequelize.INTEGER,
+    /* references: {
+      model: Road,
+      key: 'id',
+    }, */
+  },
+  rightRoadId: {
+    type: Sequelize.INTEGER,
+    /* references: {
+      model: Road,
+      key: 'id',
+    }, */
+  },
+  geometry: Sequelize.JSON,
+}, OPTIONS);
+
+// RoadConnection.hasOne(Road, { as: 'LeftRoad', foreignKey: 'leftRoadId' });
+// RoadConnection.hasOne(Road, { as: 'RightRoad', foreignKey: 'rightRoadId' });
+
 sequelize
   .authenticate()
   .then(() => {

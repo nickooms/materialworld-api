@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:WFS_Capabilities version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.opengis.net/wfs" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ows="http://www.opengis.net/ows" xmlns:gml="http://www.opengis.net/gml" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wfs  http://schemas.opengis.net/wfs/1.1.0/wfs.xsd http://inspire.ec.europa.eu/schemas/inspire_dls/1.0 http://inspire.ec.europa.eu/schemas/inspire_dls/1.0/inspire_dls.xsd" xmlns:inspire_dls="http://inspire.ec.europa.eu/schemas/inspire_dls/1.0" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:GRB="informatievlaanderen.be/grb">
+	<ows:ServiceIdentification>
+		<ows:Title>WFS GRB</ows:Title>
+		<ows:Abstract>Via de WFS GRB kan je de vectordata van de verschillende objecten uit het Grootschalig Referentiebestand (GRB) opvragen. De WFS GRB bevat alle GRB-gegevens gebaseerd op het GRBgis product. De gebruiker kan selecteren welke GRB-gegevens opgevraagd worden. Voor een gedetailleerde databeschrijving van het GRB raadpleegt u best het GRB-objectenhandboek via www.agiv.be/producten/grb/objectcatalogus/entiteiten</ows:Abstract>
+		<ows:Keywords>
+			<ows:Keyword>aanhorigheid</ows:Keyword>
+			<ows:Keyword>administratief perceel</ows:Keyword>
+			<ows:Keyword>administratieve grens</ows:Keyword>
+			<ows:Keyword>adp</ows:Keyword>
+			<ows:Keyword>adres</ows:Keyword>
+			<ows:Keyword>afdak</ows:Keyword>
+			<ows:Keyword>afrit</ows:Keyword>
+			<ows:Keyword>ano</ows:Keyword>
+			<ows:Keyword>anomalie</ows:Keyword>
+			<ows:Keyword>as built</ows:Keyword>
+			<ows:Keyword>as-builtplan</ows:Keyword>
+			<ows:Keyword>autosnelweg</ows:Keyword>
+			<ows:Keyword>baangracht</ows:Keyword>
+			<ows:Keyword>basiskaart</ows:Keyword>
+			<ows:Keyword>beek</ows:Keyword>
+			<ows:Keyword>bergplaats</ows:Keyword>
+			<ows:Keyword>berm</ows:Keyword>
+			<ows:Keyword>bijgebouw</ows:Keyword>
+			<ows:Keyword>bijhoudingszone</ows:Keyword>
+			<ows:Keyword>boordsteen</ows:Keyword>
+			<ows:Keyword>bouwsel</ows:Keyword>
+			<ows:Keyword>brandkraan</ows:Keyword>
+			<ows:Keyword>brug</ows:Keyword>
+			<ows:Keyword>bushok</ows:Keyword>
+			<ows:Keyword>cabine</ows:Keyword>
+			<ows:Keyword>capakey</ows:Keyword>
+			<ows:Keyword>chemische installatie</ows:Keyword>
+			<ows:Keyword>circulatiezone zwakke weggebruiker</ows:Keyword>
+			<ows:Keyword>constructie</ows:Keyword>
+			<ows:Keyword>CRAB</ows:Keyword>
+			<ows:Keyword>deelgemeente</ows:Keyword>
+			<ows:Keyword>deksel</ows:Keyword>
+			<ows:Keyword>dienstweg</ows:Keyword>
+			<ows:Keyword>drempel</ows:Keyword>
+			<ows:Keyword>elektriciteitspaal</ows:Keyword>
+			<ows:Keyword>fietsstalling</ows:Keyword>
+			<ows:Keyword>fietsweg</ows:Keyword>
+			<ows:Keyword>flitspaal</ows:Keyword>
+			<ows:Keyword>fontein</ows:Keyword>
+			<ows:Keyword>fout</ows:Keyword>
+			<ows:Keyword>garagetoegang</ows:Keyword>
+			<ows:Keyword>gba</ows:Keyword>
+			<ows:Keyword>gbg</ows:Keyword>
+			<ows:Keyword>gebouw</ows:Keyword>
+			<ows:Keyword>gebouw aan de grond</ows:Keyword>
+			<ows:Keyword>gebouwaanhorigheid</ows:Keyword>
+			<ows:Keyword>gemeente</ows:Keyword>
+			<ows:Keyword>gemeentegrens</ows:Keyword>
+			<ows:Keyword>gevel</ows:Keyword>
+			<ows:Keyword>gevellijn</ows:Keyword>
+			<ows:Keyword>gevelpunt</ows:Keyword>
+			<ows:Keyword>golfbreker</ows:Keyword>
+			<ows:Keyword>gracht</ows:Keyword>
+			<ows:Keyword>GRB</ows:Keyword>
+			<ows:Keyword>GRB gis</ows:Keyword>
+			<ows:Keyword>GRB-databank</ows:Keyword>
+			<ows:Keyword>GRB-gis</ows:Keyword>
+			<ows:Keyword>grenspaal</ows:Keyword>
+			<ows:Keyword>grootschalig</ows:Keyword>
+			<ows:Keyword>Grootschalig Referentiebestand</ows:Keyword>
+			<ows:Keyword>gvl</ows:Keyword>
+			<ows:Keyword>gvp</ows:Keyword>
+			<ows:Keyword>havendam</ows:Keyword>
+			<ows:Keyword>hoofdgebouw</ows:Keyword>
+			<ows:Keyword>hoogspanningsmast</ows:Keyword>
+			<ows:Keyword>huisnummer</ows:Keyword>
+			<ows:Keyword>ingezonken garagetoegang</ows:Keyword>
+			<ows:Keyword>kaart</ows:Keyword>
+			<ows:Keyword>kadastraal</ows:Keyword>
+			<ows:Keyword>kantsteen</ows:Keyword>
+			<ows:Keyword>keermuur</ows:Keyword>
+			<ows:Keyword>knw</ows:Keyword>
+			<ows:Keyword>koeltoren</ows:Keyword>
+			<ows:Keyword>kopmuur</ows:Keyword>
+			<ows:Keyword>kruispunt</ows:Keyword>
+			<ows:Keyword>kunstwerk</ows:Keyword>
+			<ows:Keyword>lbz</ows:Keyword>
+			<ows:Keyword>lokale bijhoudingszone</ows:Keyword>
+			<ows:Keyword>longitudinale inrichting</ows:Keyword>
+			<ows:Keyword>loopbrug</ows:Keyword>
+			<ows:Keyword>luik</ows:Keyword>
+			<ows:Keyword>mast</ows:Keyword>
+			<ows:Keyword>meer</ows:Keyword>
+			<ows:Keyword>meerpaal</ows:Keyword>
+			<ows:Keyword>meetkundig verdichtingspunt</ows:Keyword>
+			<ows:Keyword>metro</ows:Keyword>
+			<ows:Keyword>mkp</ows:Keyword>
+			<ows:Keyword>mkv</ows:Keyword>
+			<ows:Keyword>monument</ows:Keyword>
+			<ows:Keyword>mutatie</ows:Keyword>
+			<ows:Keyword>muur</ows:Keyword>
+			<ows:Keyword>niscode</ows:Keyword>
+			<ows:Keyword>onderkeldering</ows:Keyword>
+			<ows:Keyword>onverhard</ows:Keyword>
+			<ows:Keyword>onverharde zone</ows:Keyword>
+			<ows:Keyword>onvolledigheid</ows:Keyword>
+			<ows:Keyword>oppervlaktewater</ows:Keyword>
+			<ows:Keyword>oprit</ows:Keyword>
+			<ows:Keyword>opslagtank</ows:Keyword>
+			<ows:Keyword>overbrugging</ows:Keyword>
+			<ows:Keyword>paal</ows:Keyword>
+			<ows:Keyword>parallelweg</ows:Keyword>
+			<ows:Keyword>perceel</ows:Keyword>
+			<ows:Keyword>perceelsreconstructiepunt</ows:Keyword>
+			<ows:Keyword>pijler</ows:Keyword>
+			<ows:Keyword>planimetrisch referentiepunt</ows:Keyword>
+			<ows:Keyword>praatpaal</ows:Keyword>
+			<ows:Keyword>prp</ows:Keyword>
+			<ows:Keyword>puntvormige inrichting</ows:Keyword>
+			<ows:Keyword>putdeksel</ows:Keyword>
+			<ows:Keyword>rail</ows:Keyword>
+			<ows:Keyword>referentiebestand</ows:Keyword>
+			<ows:Keyword>rijbaan</ows:Keyword>
+			<ows:Keyword>rivier</ows:Keyword>
+			<ows:Keyword>rooster</ows:Keyword>
+			<ows:Keyword>rotonde</ows:Keyword>
+			<ows:Keyword>sbn</ows:Keyword>
+			<ows:Keyword>schoorsteen</ows:Keyword>
+			<ows:Keyword>silo</ows:Keyword>
+			<ows:Keyword>sloot</ows:Keyword>
+			<ows:Keyword>spoor</ows:Keyword>
+			<ows:Keyword>spoorbaan</ows:Keyword>
+			<ows:Keyword>stad</ows:Keyword>
+			<ows:Keyword>staketsel</ows:Keyword>
+			<ows:Keyword>standbeeld</ows:Keyword>
+			<ows:Keyword>stootband</ows:Keyword>
+			<ows:Keyword>straatnaam</ows:Keyword>
+			<ows:Keyword>strandhoofd</ows:Keyword>
+			<ows:Keyword>telefooncabine</ows:Keyword>
+			<ows:Keyword>terrein</ows:Keyword>
+			<ows:Keyword>terreinobject</ows:Keyword>
+			<ows:Keyword>toponiem</ows:Keyword>
+			<ows:Keyword>tram</ows:Keyword>
+			<ows:Keyword>tramweg</ows:Keyword>
+			<ows:Keyword>trap</ows:Keyword>
+			<ows:Keyword>trein</ows:Keyword>
+			<ows:Keyword>trn</ows:Keyword>
+			<ows:Keyword>tunnelmond</ows:Keyword>
+			<ows:Keyword>TV-mast</ows:Keyword>
+			<ows:Keyword>uitbreiding</ows:Keyword>
+			<ows:Keyword>vangrail</ows:Keyword>
+			<ows:Keyword>ventweg</ows:Keyword>
+			<ows:Keyword>verdieping</ows:Keyword>
+			<ows:Keyword>verharding</ows:Keyword>
+			<ows:Keyword>verheven garagetoegang</ows:Keyword>
+			<ows:Keyword>verhoging</ows:Keyword>
+			<ows:Keyword>verkeersdrempel</ows:Keyword>
+			<ows:Keyword>verkeerslicht</ows:Keyword>
+			<ows:Keyword>verkeersplateau</ows:Keyword>
+			<ows:Keyword>verkeersplein</ows:Keyword>
+			<ows:Keyword>verlichtingspaal</ows:Keyword>
+			<ows:Keyword>VHA</ows:Keyword>
+			<ows:Keyword>vijver</ows:Keyword>
+			<ows:Keyword>Vlaamse Hydrografische Atlas</ows:Keyword>
+			<ows:Keyword>voetpad</ows:Keyword>
+			<ows:Keyword>wandelweg</ows:Keyword>
+			<ows:Keyword>water</ows:Keyword>
+			<ows:Keyword>waterbouwkundige constructie</ows:Keyword>
+			<ows:Keyword>watergang</ows:Keyword>
+			<ows:Keyword>waterloop</ows:Keyword>
+			<ows:Keyword>wateroppervlak</ows:Keyword>
+			<ows:Keyword>watertoren</ows:Keyword>
+			<ows:Keyword>waterweg</ows:Keyword>
+			<ows:Keyword>wbn</ows:Keyword>
+			<ows:Keyword>wcz</ows:Keyword>
+			<ows:Keyword>weg</ows:Keyword>
+			<ows:Keyword>wegaanhorigheid</ows:Keyword>
+			<ows:Keyword>wegbaan</ows:Keyword>
+			<ows:Keyword>wegbaaninrichting</ows:Keyword>
+			<ows:Keyword>weginrichting</ows:Keyword>
+			<ows:Keyword>wegknoop</ows:Keyword>
+			<ows:Keyword>wegopdeling</ows:Keyword>
+			<ows:Keyword>wegsegment</ows:Keyword>
+			<ows:Keyword>wegverbinding</ows:Keyword>
+			<ows:Keyword>wga</ows:Keyword>
+			<ows:Keyword>wgo</ows:Keyword>
+			<ows:Keyword>wgr</ows:Keyword>
+			<ows:Keyword>wkn</ows:Keyword>
+			<ows:Keyword>wlas</ows:Keyword>
+			<ows:Keyword>wli</ows:Keyword>
+			<ows:Keyword>woz</ows:Keyword>
+			<ows:Keyword>wpi</ows:Keyword>
+			<ows:Keyword>wrb</ows:Keyword>
+			<ows:Keyword>wri</ows:Keyword>
+			<ows:Keyword>wrl</ows:Keyword>
+			<ows:Keyword>wti</ows:Keyword>
+			<ows:Keyword>wtz</ows:Keyword>
+			<ows:Keyword>wvb</ows:Keyword>
+			<ows:Keyword>zichtbare onderkeldering</ows:Keyword>
+			<ows:Keyword>Lijst M&amp;R INSPIRE</ows:Keyword>
+			<ows:Keyword>OGC:WFS</ows:Keyword>
+		</ows:Keywords>
+		<ows:ServiceType>WFS</ows:ServiceType>
+		<ows:ServiceTypeVersion>1.1.0</ows:ServiceTypeVersion>
+		<ows:Fees>Het gebruik van de service is kosteloos.</ows:Fees>
+		<ows:AccessConstraints>Het gebruiksrecht is te vinden op https://overheid.vlaanderen.be/Webdiensten-Gebruiksrecht.</ows:AccessConstraints>
+	</ows:ServiceIdentification>
+	<ows:ServiceProvider>
+		<ows:ProviderName>agentschap Informatie Vlaanderen</ows:ProviderName>
+		<ows:ProviderSite xlink:href="http://www.vlaanderen.be/informatievlaanderen"/>
+		<ows:ServiceContact>
+			<ows:ContactInfo>
+				<ows:Phone>
+					<ows:Voice>+32 9 276 15 00</ows:Voice>
+				</ows:Phone>
+				<ows:Address>
+					<ows:DeliveryPoint>Havenlaan 88</ows:DeliveryPoint>
+					<ows:City>Brussel</ows:City>
+					<ows:AdministrativeArea/>
+					<ows:PostalCode>1000</ows:PostalCode>
+					<ows:Country>België</ows:Country>
+					<ows:ElectronicMailAddress>informatie.vlaanderen@vlaanderen.be</ows:ElectronicMailAddress>
+				</ows:Address>
+			</ows:ContactInfo>
+		</ows:ServiceContact>
+	</ows:ServiceProvider>
+	<ows:OperationsMetadata>
+		<ows:Operation name="GetCapabilities">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+					<ows:Post xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="AcceptVersions">
+				<ows:Value>1.0.0</ows:Value>
+				<ows:Value>1.1.0</ows:Value>
+			</ows:Parameter>
+			<ows:Parameter name="AcceptFormats">
+				<ows:Value>text/xml</ows:Value>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Operation name="DescribeFeatureType">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+					<ows:Post xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="outputFormat">
+				<ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+			</ows:Parameter>
+		</ows:Operation>
+		<ows:Operation name="GetFeature">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+					<ows:Post xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+			<ows:Parameter name="resultType">
+				<ows:Value>results</ows:Value>
+				<ows:Value>hits</ows:Value>
+			</ows:Parameter>
+			<ows:Parameter name="outputFormat">
+				<ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+				<ows:Value>GML2</ows:Value>
+				<ows:Value>KML</ows:Value>
+				<ows:Value>SHAPE-ZIP</ows:Value>
+				<ows:Value>application/gml+xml; version=3.2</ows:Value>
+				<ows:Value>application/json</ows:Value>
+				<ows:Value>application/vnd.google-earth.kml xml</ows:Value>
+				<ows:Value>application/vnd.google-earth.kml+xml</ows:Value>
+				<ows:Value>csv</ows:Value>
+				<ows:Value>gml3</ows:Value>
+				<ows:Value>gml32</ows:Value>
+				<ows:Value>json</ows:Value>
+				<ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+				<ows:Value>text/xml; subtype=gml/3.2</ows:Value>
+			</ows:Parameter>
+			<ows:Constraint name="LocalTraverseXLinkScope">
+				<ows:Value>2</ows:Value>
+			</ows:Constraint>
+		</ows:Operation>
+		<ows:Operation name="GetGmlObject">
+			<ows:DCP>
+				<ows:HTTP>
+					<ows:Get xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+					<ows:Post xlink:href="https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs"/>
+				</ows:HTTP>
+			</ows:DCP>
+		</ows:Operation>
+		<ows:Constraint name="DefaultMaxFeatures">
+			<ows:Value>10000</ows:Value>
+		</ows:Constraint>
+		<ows:ExtendedCapabilities>
+			<inspire_dls:ExtendedCapabilities>
+				<inspire_common:ResourceLocator>
+					<inspire_common:URL>https://geoservices.informatievlaanderen.be/overdrachtdiensten/GRB/wfs</inspire_common:URL>
+					<inspire_common:MediaType>application/vnd.ogc.wms_xml</inspire_common:MediaType>
+				</inspire_common:ResourceLocator>
+				<inspire_common:ResourceType>service</inspire_common:ResourceType>
+				<inspire_common:TemporalReference>
+					<inspire_common:DateOfCreation>2016-03-15</inspire_common:DateOfCreation>
+				</inspire_common:TemporalReference>
+				<inspire_common:Conformity>
+					<inspire_common:Specification xsi:type="inspire_common:citationInspireInteroperabilityRegulation_dut">
+						<inspire_common:Title>VERORDENING (EU) Nr. 1089/2010 VAN DE COMMISSIE van 23 november 2010 ter uitvoering van Richtlijn 2007/2/EG van het Europees Parlement en de Raad betreffende de interoperabiliteit van verzamelingen ruimtelijke gegevens en van diensten met betrekking tot ruimtelijke gegevens</inspire_common:Title>
+						<inspire_common:DateOfPublication>2010-12-08</inspire_common:DateOfPublication>
+						<inspire_common:URI>OJ:L:2010:323:0011:0102:NL:PDF</inspire_common:URI>
+						<inspire_common:ResourceLocator>
+							<inspire_common:URL>http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:323:0011:0102:NL:PDF</inspire_common:URL>
+							<inspire_common:MediaType>application/pdf</inspire_common:MediaType>
+						</inspire_common:ResourceLocator>
+					</inspire_common:Specification>
+					<inspire_common:Degree>notEvaluated</inspire_common:Degree>
+				</inspire_common:Conformity>
+				<inspire_common:MetadataPointOfContact>
+					<inspire_common:OrganisationName>agentschap Informatie Vlaanderen</inspire_common:OrganisationName>
+					<inspire_common:EmailAddress>informatie.vlaanderen@vlaanderen.be</inspire_common:EmailAddress>
+				</inspire_common:MetadataPointOfContact>
+				<inspire_common:MetadataDate>2013-05-29</inspire_common:MetadataDate>
+				<inspire_common:SpatialDataServiceType>download</inspire_common:SpatialDataServiceType>
+				<inspire_common:MandatoryKeyword xsi:type="inspire_common:classificationOfSpatialDataService">
+					<inspire_common:KeywordValue>infoFeatureAccessService</inspire_common:KeywordValue>
+				</inspire_common:MandatoryKeyword>
+				<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_dut">
+					<inspire_common:OriginatingControlledVocabulary xsi:type="inspire_common:originatingControlledVocabularyGemetInspireThemes">
+						<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+						<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+					</inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:KeywordValue>Kadastrale percelen</inspire_common:KeywordValue>
+				</inspire_common:Keyword>
+				<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_dut">
+					<inspire_common:OriginatingControlledVocabulary xsi:type="inspire_common:originatingControlledVocabularyGemetInspireThemes">
+						<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+						<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+					</inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:KeywordValue>Vervoersnetwerken</inspire_common:KeywordValue>
+				</inspire_common:Keyword>
+				<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_dut">
+					<inspire_common:OriginatingControlledVocabulary xsi:type="inspire_common:originatingControlledVocabularyGemetInspireThemes">
+						<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+						<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+					</inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:KeywordValue>Hydrografie</inspire_common:KeywordValue>
+				</inspire_common:Keyword>
+				<inspire_common:Keyword xsi:type="inspire_common:inspireTheme_dut">
+					<inspire_common:OriginatingControlledVocabulary xsi:type="inspire_common:originatingControlledVocabularyGemetInspireThemes">
+						<inspire_common:Title>GEMET - INSPIRE themes</inspire_common:Title>
+						<inspire_common:DateOfPublication>2008-06-01</inspire_common:DateOfPublication>
+					</inspire_common:OriginatingControlledVocabulary>
+					<inspire_common:KeywordValue>Gebouwen</inspire_common:KeywordValue>
+				</inspire_common:Keyword>
+				<inspire_common:SupportedLanguages>
+					<inspire_common:DefaultLanguage>
+						<inspire_common:Language>dut</inspire_common:Language>
+					</inspire_common:DefaultLanguage>
+				</inspire_common:SupportedLanguages>
+				<inspire_common:ResponseLanguage>
+					<inspire_common:Language>dut</inspire_common:Language>
+				</inspire_common:ResponseLanguage>
+				<inspire_common:MetadataUrl>
+					<inspire_common:URL>http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=3f534d5e-cc87-1d0d-69a9-2edb-79be-083f-a81551a0&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</inspire_common:URL>
+					<inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+				</inspire_common:MetadataUrl>
+				<inspire_dls:SpatialDataSetIdentifier metadataURL="http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd">
+					<inspire_common:Code>E2707D13-B366-4D25-A286-E1B1330CADF7</inspire_common:Code>
+					<inspire_common:Namespace>informatievlaanderen-be</inspire_common:Namespace>
+				</inspire_dls:SpatialDataSetIdentifier>
+			</inspire_dls:ExtendedCapabilities>
+		</ows:ExtendedCapabilities>
+	</ows:OperationsMetadata>
+	<FeatureTypeList>
+		<Operations>
+			<Operation>Query</Operation>
+		</Operations>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:ADP</Name>
+			<Title>GRB - ADP - administratief perceel</Title>
+			<Abstract>Een administratief perceel (adp) is een grafische voorstelling van de vermoedelijke ligging van het kadastraal perceel, waarbij de perceelsgrenzen werden geïnterpreteerd rekening houdend met de terreinsituatie.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>administratief perceel</ows:Keyword>
+				<ows:Keyword>adp</ows:Keyword>
+				<ows:Keyword>capakey</ows:Keyword>
+				<ows:Keyword>kadastraal</ows:Keyword>
+				<ows:Keyword>niscode</ows:Keyword>
+				<ows:Keyword>perceel</ows:Keyword>
+				<ows:Keyword>perceelsreconstructiepunt</ows:Keyword>
+				<ows:Keyword>prp</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:ANO</Name>
+			<Title>GRB - ANO - anomalie</Title>
+			<Abstract>Een anomalie is een geverifieerde GRB-afwijking. GRB-afwijkingen worden door een grote groep van gebruikers aan Informatie Vlaanderen gemeld, die ze controleert en beheert als anomalieën.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>ano</ows:Keyword>
+				<ows:Keyword>anomalie</ows:Keyword>
+				<ows:Keyword>mutatie</ows:Keyword>
+				<ows:Keyword>fout</ows:Keyword>
+				<ows:Keyword>onvolledigheid</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:GBA</Name>
+			<Title>GRB - GBA - gebouwaanhorigheid</Title>
+			<Abstract>Een gebouwaanhorigheid is een duurzame constructie die aanleunt bij en behoort tot een in het GRB opgenomen gebouw aan de grond (Gbg).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>aanhorigheid</ows:Keyword>
+				<ows:Keyword>afdak</ows:Keyword>
+				<ows:Keyword>bouwsel</ows:Keyword>
+				<ows:Keyword>garagetoegang</ows:Keyword>
+				<ows:Keyword>gba</ows:Keyword>
+				<ows:Keyword>gebouwaanhorigheid</ows:Keyword>
+				<ows:Keyword>ingezonken garagetoegang</ows:Keyword>
+				<ows:Keyword>loopbrug</ows:Keyword>
+				<ows:Keyword>onderkeldering</ows:Keyword>
+				<ows:Keyword>trap</ows:Keyword>
+				<ows:Keyword>uitbreiding</ows:Keyword>
+				<ows:Keyword>verdieping</ows:Keyword>
+				<ows:Keyword>verheven garagetoegang</ows:Keyword>
+				<ows:Keyword>zichtbare onderkeldering</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:GBG</Name>
+			<Title>GRB - GBG - gebouw aan de grond</Title>
+			<Abstract>Een gebouw aan de grond (gbg) is een duurzaam bouwsel, vast met het aardoppervlak verbonden, dat een voor mensen toegankelijke ruimte omsluit. Een gelijkvloerse toegang voor ondergrondse of hangende constructies wordt eveneens als gebouw aan de grond beschouwd. Bepaalde duurzame bouwsels die aan bovenstaande definitie beantwoorden, worden echter in andere GRB-entiteiten opgenomen en niet hier. Bijvoorbeeld koeltorens, watertorens, e.d. worden opgenomen als kunstwerk (entiteit Knw).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>bijgebouw</ows:Keyword>
+				<ows:Keyword>cabine</ows:Keyword>
+				<ows:Keyword>constructie</ows:Keyword>
+				<ows:Keyword>gbg</ows:Keyword>
+				<ows:Keyword>gebouw aan de grond</ows:Keyword>
+				<ows:Keyword>gebouw</ows:Keyword>
+				<ows:Keyword>hoofdgebouw</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:GVL</Name>
+			<Title>GRB - GVL - gevellijn</Title>
+			<Abstract>Een gevellijn volgt de verticale projectie van het gevelvlak op het maaiveld en verbindt twee verschillende gevelpunten (gvp). In zijn meest eenvoudige vorm wordt een gebouw aan de grond beschreven door vier elementaire gevelvlakken (een voorgevel, een achtergevel en twee zijgevels).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>gevel</ows:Keyword>
+				<ows:Keyword>gevellijn</ows:Keyword>
+				<ows:Keyword>gvl</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:GVP</Name>
+			<Title>GRB - GVP - gevelpunt</Title>
+			<Abstract>Een gevelpunt (gvp) is elk beduidend vormpunt van de gevellijn van een gebouw aan de grond (gbg).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>gevelpunt</ows:Keyword>
+				<ows:Keyword>gvp</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:KNW</Name>
+			<Title>GRB - KNW - kunstwerk</Title>
+			<Abstract>Een kunstwerk (knw) is een civieltechnische constructie, of specifiek type gebouw, niet opgenomen als gebouw aan de grond (gbg), opgetrokken uit duurzame materialen en zichtbaar aan het aardoppervlak.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>bouwsel</ows:Keyword>
+				<ows:Keyword>brug</ows:Keyword>
+				<ows:Keyword>cabine</ows:Keyword>
+				<ows:Keyword>chemische installatie</ows:Keyword>
+				<ows:Keyword>fontein</ows:Keyword>
+				<ows:Keyword>golfbreker</ows:Keyword>
+				<ows:Keyword>havendam</ows:Keyword>
+				<ows:Keyword>hoogspanningsmast</ows:Keyword>
+				<ows:Keyword>knw</ows:Keyword>
+				<ows:Keyword>koeltoren</ows:Keyword>
+				<ows:Keyword>kunstwerk</ows:Keyword>
+				<ows:Keyword>mast</ows:Keyword>
+				<ows:Keyword>monument</ows:Keyword>
+				<ows:Keyword>opslagtank</ows:Keyword>
+				<ows:Keyword>overbrugging</ows:Keyword>
+				<ows:Keyword>pijler</ows:Keyword>
+				<ows:Keyword>rooster</ows:Keyword>
+				<ows:Keyword>schoorsteen</ows:Keyword>
+				<ows:Keyword>silo</ows:Keyword>
+				<ows:Keyword>staketsel</ows:Keyword>
+				<ows:Keyword>standbeeld</ows:Keyword>
+				<ows:Keyword>strandhoofd</ows:Keyword>
+				<ows:Keyword>tunnelmond</ows:Keyword>
+				<ows:Keyword>TV-mast</ows:Keyword>
+				<ows:Keyword>waterbouwkundige constructie</ows:Keyword>
+				<ows:Keyword>watertoren</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:LBZ</Name>
+			<Title>GRB - LBZ - lokale bijhoudingszone</Title>
+			<Abstract>Een lokale bijhoudingszone (lbz) is de contour van een zone waar het GRB lokaal werd bijgewerkt.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>as built</ows:Keyword>
+				<ows:Keyword>as-builtplan</ows:Keyword>
+				<ows:Keyword>bijhoudingszone</ows:Keyword>
+				<ows:Keyword>lbz</ows:Keyword>
+				<ows:Keyword>lokale bijhoudingszone</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:SBN</Name>
+			<Title>GRB - SBN - spoorbaan</Title>
+			<Abstract>De spoorbaan (sbn) is de corridor van het transportnetwerk bedoeld voor het spoorverkeer. De spoorcorridor stelt de zone voor waar exclusief spoorverkeer (trein, metro of tram) plaatsgrijpt.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>metro</ows:Keyword>
+				<ows:Keyword>sbn</ows:Keyword>
+				<ows:Keyword>spoor</ows:Keyword>
+				<ows:Keyword>spoorbaan</ows:Keyword>
+				<ows:Keyword>tram</ows:Keyword>
+				<ows:Keyword>tramweg</ows:Keyword>
+				<ows:Keyword>trein</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:TBLADPADR</Name>
+			<Title>GRB - TBLADPADR - huisnummer van een administratief perceel</Title>
+			<Abstract>Een administratief perceel kan geen, één of verschillende adressen hebben. Eén adres kan toegekend zijn aan één of aan verschillende administratieve percelen. Een adres wordt enkel gerelateerd aan een administratief perceel indien het een administratief perceel betreft waarop geen gebouwen aan de grond of kunstwerken opgetrokken zijn</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>adres</ows:Keyword>
+				<ows:Keyword>CRAB</ows:Keyword>
+				<ows:Keyword>huisnummer</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:TBLGBGADR</Name>
+			<Title>GRB - TBLGBGADR - huisnummer van een gebouw aan de grond</Title>
+			<Abstract>Een gebouw kan geen, één of verschillende adressen hebben. Eén adres kan toegekend zijn aan één of aan verschillende gebouwen.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>adres</ows:Keyword>
+				<ows:Keyword>CRAB</ows:Keyword>
+				<ows:Keyword>huisnummer</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:TBLKNWADR</Name>
+			<Title>GRB - TBLKNWADR - huisnummer van een kunstwerk</Title>
+			<Abstract>Een kunstwerk kan geen, één of verschillende adressen hebben. Eén adres kan toegekend zijn aan één of aan verschillende kunstwerken.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>adres</ows:Keyword>
+				<ows:Keyword>CRAB</ows:Keyword>
+				<ows:Keyword>huisnummer</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:TRN</Name>
+			<Title>GRB - TRN - terrein</Title>
+			<Abstract>Een terrein (trn) is een surplusgebied dat deel uitmaakt van het openbaar domein en grenst aan een weg-, spoor- of watercorridor.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>terrein</ows:Keyword>
+				<ows:Keyword>trn</ows:Keyword>
+				<ows:Keyword>verharding</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WBN</Name>
+			<Title>GRB - WBN - wegbaan</Title>
+			<Abstract>De wegbaan (wbn) is de voorstelling van de wegcorridor in het GRB. De wegbaan wordt overlangs opgedeeld in verschillende arbitrair afgebakende wegbaanelementen. Er zijn twee types wegbaanelementen: (i) een kruispuntzone komt overeen met een kruispunt; (ii) een wegsegment komt overeen met een wegvak.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>berm</ows:Keyword>
+				<ows:Keyword>kruispunt</ows:Keyword>
+				<ows:Keyword>wbn</ows:Keyword>
+				<ows:Keyword>weg</ows:Keyword>
+				<ows:Keyword>wegbaan</ows:Keyword>
+				<ows:Keyword>wegsegment</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WGA</Name>
+			<Title>GRB - WGA - wegaanhorigheid</Title>
+			<Abstract>Een wegaanhorigheid (wga) is een constructie die binnen de wegbaan of binnen een terrein met verkeersfunctie opgericht werd om onderdak te bieden aan personen, vervoersmiddelen en goederen, maar niet als zelfstandig gebouw beschouwd kan worden.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>bergplaats</ows:Keyword>
+				<ows:Keyword>bushok</ows:Keyword>
+				<ows:Keyword>cabine</ows:Keyword>
+				<ows:Keyword>fietsstalling</ows:Keyword>
+				<ows:Keyword>telefooncabine</ows:Keyword>
+				<ows:Keyword>wegaanhorigheid</ows:Keyword>
+				<ows:Keyword>wga</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WGO</Name>
+			<Title>GRB - WGO - wegopdeling</Title>
+			<Abstract>De wegopdeling (wgo) is de fysieke begrenzing van goed identificeerbare functionele stroken binnen de wegbaan (wbn).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>berm</ows:Keyword>
+				<ows:Keyword>boordsteen</ows:Keyword>
+				<ows:Keyword>circulatiezone zwakke weggebruiker</ows:Keyword>
+				<ows:Keyword>drempel</ows:Keyword>
+				<ows:Keyword>kantsteen</ows:Keyword>
+				<ows:Keyword>onverhard</ows:Keyword>
+				<ows:Keyword>onverharde zone</ows:Keyword>
+				<ows:Keyword>rijbaan</ows:Keyword>
+				<ows:Keyword>verhoging</ows:Keyword>
+				<ows:Keyword>wcz</ows:Keyword>
+				<ows:Keyword>wegbaaninrichting</ows:Keyword>
+				<ows:Keyword>weginrichting</ows:Keyword>
+				<ows:Keyword>wegopdeling</ows:Keyword>
+				<ows:Keyword>wgo</ows:Keyword>
+				<ows:Keyword>woz</ows:Keyword>
+				<ows:Keyword>wrb</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WGR</Name>
+			<Title>GRB - WGR - gracht</Title>
+			<Abstract>Een gracht (wgr) is een waterloop, een beek of een sloot, bedoeld voor de af- of aanvoer of het tijdelijk ophouden van oppervlaktewater en gelegen binnen de wegbaan (baangrachten).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>baangracht</ows:Keyword>
+				<ows:Keyword>beek</ows:Keyword>
+				<ows:Keyword>gracht</ows:Keyword>
+				<ows:Keyword>rivier</ows:Keyword>
+				<ows:Keyword>sloot</ows:Keyword>
+				<ows:Keyword>water</ows:Keyword>
+				<ows:Keyword>waterloop</ows:Keyword>
+				<ows:Keyword>wgr</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WKN</Name>
+			<Title>GRB - WKN - wegknoop</Title>
+			<Abstract>Een wegknoop (wkn) is een puntvormig element dat een wegverbinding (wvb) begrenst.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>wegknoop</ows:Keyword>
+				<ows:Keyword>wkn</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WLAS</Name>
+			<Title>GRB - WLAS - VHA-waterloopsegment</Title>
+			<Abstract>Een VHA-waterloopsegment (wlas) is de aslijn van een segment van het VHA waterlopennetwerk van de Vlaamse Hydrografische Atlas.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>rivier</ows:Keyword>
+				<ows:Keyword>VHA</ows:Keyword>
+				<ows:Keyword>Vlaamse Hydrografische Atlas</ows:Keyword>
+				<ows:Keyword>water</ows:Keyword>
+				<ows:Keyword>waterloop</ows:Keyword>
+				<ows:Keyword>waterweg</ows:Keyword>
+				<ows:Keyword>wlas</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WLI</Name>
+			<Title>GRB - WLI - longitudinale weginrichting</Title>
+			<Abstract>Een longitudinaal weginrichtingselement (wli) is een vast inrichtingselement binnen de wegbaan, met als doel de verkeersstromen in gescheiden stroken te leiden. Deze inrichtingselementen zijn overwegend parallel aan de lengteas van de wegbaan georiënteerd.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>boordsteen</ows:Keyword>
+				<ows:Keyword>kantsteen</ows:Keyword>
+				<ows:Keyword>keermuur</ows:Keyword>
+				<ows:Keyword>kopmuur</ows:Keyword>
+				<ows:Keyword>longitudinale inrichting</ows:Keyword>
+				<ows:Keyword>muur</ows:Keyword>
+				<ows:Keyword>stootband</ows:Keyword>
+				<ows:Keyword>vangrail</ows:Keyword>
+				<ows:Keyword>verhoging</ows:Keyword>
+				<ows:Keyword>weginrichting</ows:Keyword>
+				<ows:Keyword>wli</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WPI</Name>
+			<Title>GRB - WPI - puntvormige inrichting</Title>
+			<Abstract>Een puntvormig weginrichtingselement (wpi) is een inrichtingselement behorende bij de wegbaan (wbn), waarvan het contact met het grondoppervlak onvoldoende groot is om als lijn of veelhoek gekarteerd te worden.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>brandkraan</ows:Keyword>
+				<ows:Keyword>elektriciteitspaal</ows:Keyword>
+				<ows:Keyword>flitspaal</ows:Keyword>
+				<ows:Keyword>grenspaal</ows:Keyword>
+				<ows:Keyword>meerpaal</ows:Keyword>
+				<ows:Keyword>paal</ows:Keyword>
+				<ows:Keyword>praatpaal</ows:Keyword>
+				<ows:Keyword>puntvormige inrichting</ows:Keyword>
+				<ows:Keyword>verkeerslicht</ows:Keyword>
+				<ows:Keyword>verlichtingspaal</ows:Keyword>
+				<ows:Keyword>wpi</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WRI</Name>
+			<Title>GRB - WRI - putdeksel</Title>
+			<Abstract>Een putdeksel (wri) is een deksel of luik van ondergrondse leidingen en installaties.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>deksel</ows:Keyword>
+				<ows:Keyword>luik</ows:Keyword>
+				<ows:Keyword>putdeksel</ows:Keyword>
+				<ows:Keyword>wri</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WRL</Name>
+			<Title>GRB - WRL - spoorrail</Title>
+			<Abstract>Een spoorrail (wrl) is een metalen spoorstaaf die spoorverkeer mogelijk maakt binnen de wegbaan (wbn) en de direct aansluitende zone.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>rail</ows:Keyword>
+				<ows:Keyword>spoor</ows:Keyword>
+				<ows:Keyword>tram</ows:Keyword>
+				<ows:Keyword>tramweg</ows:Keyword>
+				<ows:Keyword>trein</ows:Keyword>
+				<ows:Keyword>wrl</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WTI</Name>
+			<Title>GRB - WTI - transversale weginrichting</Title>
+			<Abstract>Een transversaal weginrichtingselement (wti) is een vast inrichtingselement binnen de zone voor snelverkeer met als doel de normale verkeersstroom te remmen of te compartimenteren. Deze inrichtingselementen zijn overwegend dwars op de lengteas van de wegbaan (wbn) georiënteerd.</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>drempel</ows:Keyword>
+				<ows:Keyword>verkeersdrempel</ows:Keyword>
+				<ows:Keyword>verkeersplateau</ows:Keyword>
+				<ows:Keyword>wti</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WTZ</Name>
+			<Title>GRB - WTZ - watergang</Title>
+			<Abstract>De watergang (wtz) beslaat het gebied dat rechtstreeks gedomineerd wordt door de fysieke aanwezigheid van oppervlaktewater (waterlopen en stilstaande wateroppervlakken). In de praktijk benadert de watergang (wtz) het oppervlak tussen de insteken van de beide oevertaluds (kruin).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>beek</ows:Keyword>
+				<ows:Keyword>meer</ows:Keyword>
+				<ows:Keyword>oppervlaktewater</ows:Keyword>
+				<ows:Keyword>rivier</ows:Keyword>
+				<ows:Keyword>vijver</ows:Keyword>
+				<ows:Keyword>water</ows:Keyword>
+				<ows:Keyword>watergang</ows:Keyword>
+				<ows:Keyword>waterloop</ows:Keyword>
+				<ows:Keyword>wateroppervlak</ows:Keyword>
+				<ows:Keyword>waterweg</ows:Keyword>
+				<ows:Keyword>wtz</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+		<FeatureType xmlns:GRB="informatievlaanderen.be/grb">
+			<Name>GRB:WVB</Name>
+			<Title>GRB - WVB - wegverbinding</Title>
+			<Abstract>Een wegverbinding (wvb) is een lijnvormig element dat een deel van de wegcorridor voorstelt en begrensd wordt door twee wegknopen (wkn).</Abstract>
+			<ows:Keywords>
+				<ows:Keyword>afrit</ows:Keyword>
+				<ows:Keyword>autosnelweg</ows:Keyword>
+				<ows:Keyword>dienstweg</ows:Keyword>
+				<ows:Keyword>fietsweg</ows:Keyword>
+				<ows:Keyword>oprit</ows:Keyword>
+				<ows:Keyword>parallelweg</ows:Keyword>
+				<ows:Keyword>rotonde</ows:Keyword>
+				<ows:Keyword>tramweg</ows:Keyword>
+				<ows:Keyword>ventweg</ows:Keyword>
+				<ows:Keyword>verkeersplein</ows:Keyword>
+				<ows:Keyword>voetpad</ows:Keyword>
+				<ows:Keyword>wandelweg</ows:Keyword>
+				<ows:Keyword>weg</ows:Keyword>
+				<ows:Keyword>wegsegment</ows:Keyword>
+				<ows:Keyword>wegverbinding</ows:Keyword>
+				<ows:Keyword>wvb</ows:Keyword>
+			</ows:Keywords>
+			<DefaultSRS>urn:x-ogc:def:crs:EPSG:31370</DefaultSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4326</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:4258</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3812</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3043</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:32631</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:25831</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:3857</OtherSRS>
+			<OtherSRS>urn:x-ogc:def:crs:EPSG:102100</OtherSRS>
+			<ows:WGS84BoundingBox>
+				<ows:LowerCorner>2.5252615469867092 50.6737620873438</ows:LowerCorner>
+				<ows:UpperCorner>5.936008822754789 51.505480379466675</ows:UpperCorner>
+			</ows:WGS84BoundingBox>
+			<MetadataURL type="TC211" format="text/html">https://metadata.agiv.be/zoekdienst/apps/tabsearch/index.html?uuid=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;hl=dut</MetadataURL>
+			<MetadataURL type="TC211" format="text/xml">http://metadata.agiv.be/zoekdienst/srv/dut/csw?REQUEST=GetRecordById&amp;SERVICE=CSW&amp;VERSION=2.0.2&amp;ELEMENTSETNAME=full&amp;ID=7C823055-7BBF-4D62-B55E-F85C30D53162&amp;OUTPUTSCHEMA=http://www.isotc211.org/2005/gmd</MetadataURL>
+		</FeatureType>
+	</FeatureTypeList>
+	<ogc:Filter_Capabilities>
+		<ogc:Spatial_Capabilities>
+			<ogc:GeometryOperands>
+				<ogc:GeometryOperand>gml:Envelope</ogc:GeometryOperand>
+				<ogc:GeometryOperand>gml:Point</ogc:GeometryOperand>
+				<ogc:GeometryOperand>gml:LineString</ogc:GeometryOperand>
+				<ogc:GeometryOperand>gml:Polygon</ogc:GeometryOperand>
+			</ogc:GeometryOperands>
+			<ogc:SpatialOperators>
+				<ogc:SpatialOperator name="Disjoint"/>
+				<ogc:SpatialOperator name="Equals"/>
+				<ogc:SpatialOperator name="DWithin"/>
+				<ogc:SpatialOperator name="Beyond"/>
+				<ogc:SpatialOperator name="Intersects"/>
+				<ogc:SpatialOperator name="Touches"/>
+				<ogc:SpatialOperator name="Crosses"/>
+				<ogc:SpatialOperator name="Within"/>
+				<ogc:SpatialOperator name="Contains"/>
+				<ogc:SpatialOperator name="Overlaps"/>
+				<ogc:SpatialOperator name="BBOX"/>
+			</ogc:SpatialOperators>
+		</ogc:Spatial_Capabilities>
+		<ogc:Scalar_Capabilities>
+			<ogc:LogicalOperators/>
+			<ogc:ComparisonOperators>
+				<ogc:ComparisonOperator>LessThan</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>GreaterThan</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>LessThanEqualTo</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>GreaterThanEqualTo</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>EqualTo</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>NotEqualTo</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>Like</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>Between</ogc:ComparisonOperator>
+				<ogc:ComparisonOperator>NullCheck</ogc:ComparisonOperator>
+			</ogc:ComparisonOperators>
+			<ogc:ArithmeticOperators>
+				<ogc:SimpleArithmetic/>
+				<ogc:Functions>
+					<ogc:FunctionNames>
+						<ogc:FunctionName nArgs="1">abs</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">abs_2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">abs_3</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">abs_4</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">acos</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">AddCoverages</ogc:FunctionName>
+						<ogc:FunctionName nArgs="9">Affine</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">Aggregate</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Area</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">area2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">AreaGrid</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">asin</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">atan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">atan2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">BandMerge</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">BandSelect</ogc:FunctionName>
+						<ogc:FunctionName nArgs="14">BarnesSurface</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">between</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">boundary</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">boundaryDimension</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Bounds</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">buffer</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">BufferFeatureCollection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">bufferWithSegments</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">Categorize</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">ceil</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Centroid</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">classify</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Clip</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">CollectGeometries</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Average</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Bounds</ogc:FunctionName>
+						<ogc:FunctionName nArgs="0">Collection_Count</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Max</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Median</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Min</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Nearest</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Sum</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Collection_Unique</ogc:FunctionName>
+						<ogc:FunctionName nArgs="-2">Concatenate</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">contains</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">Contour</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">convert</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">convexHull</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">cos</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">Count</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">CropCoverage</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">crosses</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">dateFormat</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">dateParse</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">difference</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">dimension</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">disjoint</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">disjoint3D</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">distance</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">distance3D</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">double2bool</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">endAngle</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">endPoint</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">env</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">envelope</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">EqualInterval</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">equalsExact</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">equalsExactTolerance</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">equalTo</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">exp</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">exteriorRing</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Feature</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">floor</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">geometryType</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">geomFromWKT</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">geomLength</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">getGeometryN</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">getX</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">getY</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">getz</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">greaterEqualThan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">greaterThan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">Grid</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">Heatmap</ogc:FunctionName>
+						<ogc:FunctionName nArgs="0">id</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">IEEEremainder</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">if_then_else</ogc:FunctionName>
+						<ogc:FunctionName nArgs="11">in10</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">in2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">in3</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">in4</ogc:FunctionName>
+						<ogc:FunctionName nArgs="6">in5</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">in6</ogc:FunctionName>
+						<ogc:FunctionName nArgs="8">in7</ogc:FunctionName>
+						<ogc:FunctionName nArgs="9">in8</ogc:FunctionName>
+						<ogc:FunctionName nArgs="10">in9</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">InclusionFeatureCollection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">int2bbool</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">int2ddouble</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">interiorPoint</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">interiorRingN</ogc:FunctionName>
+						<ogc:FunctionName nArgs="-5">Interpolate</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">intersection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">IntersectionFeatureCollection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">intersects</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">intersects3D</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isClosed</ogc:FunctionName>
+						<ogc:FunctionName nArgs="0">isCoverage</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isEmpty</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">isLike</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isNull</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">isometric</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isRing</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isSimple</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">isValid</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">isWithinDistance</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">isWithinDistance3D</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">Jenks</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">length</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">lessEqualThan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">lessThan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="-1">list</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">log</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">LRSGeocode</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">LRSMeasure</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">LRSSegment</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">max</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">max_2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">max_3</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">max_4</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">min</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">min_2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">min_3</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">min_4</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">mincircle</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">minimumdiameter</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">minrectangle</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">modulo</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">MultiplyCoverages</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Nearest</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">not</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">notEqualTo</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">numberFormat</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">numberFormat2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">numGeometries</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">numInteriorRing</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">numPoints</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">octagonalenvelope</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">offset</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">overlaps</ogc:FunctionName>
+						<ogc:FunctionName nArgs="-1">parameter</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">parseBoolean</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">parseDouble</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">parseInt</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">parseLong</ogc:FunctionName>
+						<ogc:FunctionName nArgs="0">pi</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">PointBuffers</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">pointN</ogc:FunctionName>
+						<ogc:FunctionName nArgs="7">PointStacker</ogc:FunctionName>
+						<ogc:FunctionName nArgs="6">PolygonExtraction</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">pow</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">property</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">PropertyExists</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">Quantile</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Query</ogc:FunctionName>
+						<ogc:FunctionName nArgs="0">random</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">RangeLookup</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">RasterAsPointCollection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">RasterZonalStatistics</ogc:FunctionName>
+						<ogc:FunctionName nArgs="5">Recode</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">RectangularClip</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">relate</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">relatePattern</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Reproject</ogc:FunctionName>
+						<ogc:FunctionName nArgs="-3">rescaleToPixels</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">rint</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">round</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">round_2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">roundDouble</ogc:FunctionName>
+						<ogc:FunctionName nArgs="6">ScaleCoverage</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">setCRS</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Simplify</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">sin</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">Snap</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">sqrt</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">StandardDeviation</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">startAngle</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">startPoint</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">strCapitalize</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strConcat</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strEndsWith</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strEqualsIgnoreCase</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strIndexOf</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">stringTemplate</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strLastIndexOf</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">strLength</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strMatches</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">strPosition</ogc:FunctionName>
+						<ogc:FunctionName nArgs="4">strReplace</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strStartsWith</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">strSubstring</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">strSubstringStart</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">strToLowerCase</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">strToUpperCase</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">strTrim</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">strTrim2</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">StyleCoverage</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">symDifference</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">tan</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">toDegrees</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">toRadians</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">touches</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">toWKT</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">Transform</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">union</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">UnionFeatureCollection</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">Unique</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">UniqueInterval</ogc:FunctionName>
+						<ogc:FunctionName nArgs="6">VectorToRaster</ogc:FunctionName>
+						<ogc:FunctionName nArgs="3">VectorZonalStatistics</ogc:FunctionName>
+						<ogc:FunctionName nArgs="1">vertices</ogc:FunctionName>
+						<ogc:FunctionName nArgs="2">within</ogc:FunctionName>
+					</ogc:FunctionNames>
+				</ogc:Functions>
+			</ogc:ArithmeticOperators>
+		</ogc:Scalar_Capabilities>
+		<ogc:Id_Capabilities>
+			<ogc:FID/>
+			<ogc:EID/>
+		</ogc:Id_Capabilities>
+	</ogc:Filter_Capabilities>
+</wfs:WFS_Capabilities>
