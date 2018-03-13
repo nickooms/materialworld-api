@@ -27,24 +27,13 @@ const SVGGenerator = {
     return ReactDOMServer.renderToStaticMarkup(svg);
   },
   fromWVB(roadConnections, viewBox) {
-    // console.log(features);
-
     const lines = roadConnections.map((roadConnection) => {
       const { id } = roadConnection;
       const points = roadConnection.geometry;
-      // const { geometry, properties } = feature;
-      // const { coordinates } = geometry;
-      // console.log(JSON.stringify(properties, null, 2));
-      // const { LBLTYPE } = properties;
-      // const fill = LBLTYPE === 'wegsegment' ? '#CCCCCC' : '#B7B7B7';
-      /* const { coordinates } = geometry;
-      const [points] = coordinates;
-      points.pop(); */
       const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
       return (
         <Polyline key={id} points={pointList} stroke="black" />
       );
-      // return [];
     });
     const svg = (
       <SVG viewBox={viewBox}>
@@ -62,20 +51,6 @@ const SVGGenerator = {
         <Point key={id} x={y} y={x} />
       );
     });
-    /* const lines = roadConnections.map((roadConnection) => {
-      const { id } = roadConnection;
-      const points = roadConnection.geometry;
-      // const { geometry, properties } = feature;
-      // const { coordinates } = geometry;
-      // console.log(JSON.stringify(properties, null, 2));
-      // const { LBLTYPE } = properties;
-      // const fill = LBLTYPE === 'wegsegment' ? '#CCCCCC' : '#B7B7B7';
-      const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
-      return (
-        <Polyline key={id} points={pointList} stroke="black" />
-      );
-      // return [];
-    }); */
     const svg = (
       <SVG viewBox={viewBox}>
         {points}
@@ -84,29 +59,13 @@ const SVGGenerator = {
     return ReactDOMServer.renderToStaticMarkup(svg);
   },
   fromWGO(features, viewBox) {
-    // console.dir(features, { colors: true, depth: null });
     const lines = features.map((roadDivision) => {
       const { id } = roadDivision;
       const points = roadDivision.geometry.coordinates;
-      /* const lines = roadConnections.map((roadConnection) => {
-      const { id } = roadConnection;
-      const points = roadConnection.geometry;
-      // const { geometry, properties } = feature;
-      // const { coordinates } = geometry;
-      // console.log(JSON.stringify(properties, null, 2));
-      // const { LBLTYPE } = properties;
-      // const fill = LBLTYPE === 'wegsegment' ? '#CCCCCC' : '#B7B7B7';
       const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
       return (
         <Polyline key={id} points={pointList} stroke="black" />
       );
-      // return [];
-    }); */
-      const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
-      return (
-        <Polyline key={id} points={pointList} stroke="black" />
-      );
-      // return [];
     });
     const svg = (
       <SVG viewBox={viewBox}>

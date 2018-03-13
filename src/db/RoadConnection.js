@@ -10,17 +10,9 @@ const RoadConnection = sequelize.define('road_connection', {
   oidn: Sequelize.INTEGER,
   leftRoadId: {
     type: Sequelize.INTEGER,
-    /* references: {
-      model: Road,
-      key: 'id',
-    }, */
   },
   rightRoadId: {
     type: Sequelize.INTEGER,
-    /* references: {
-      model: Road,
-      key: 'id',
-    }, */
   },
   geometry: Sequelize.JSON,
 }, OPTIONS);

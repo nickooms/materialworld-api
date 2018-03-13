@@ -5,7 +5,6 @@ import Point from './src/Point';
 import Street from './src/Street';
 import HttpCache from './src/HttpCache';
 import Migrations from './src/Migrations';
-// import dbPromise, { Feature, RoadConnection } from './src/DB';
 import dbPromise from './src/DB';
 import WFS from './src/WFS';
 import SVG from './src/SVG';
@@ -70,10 +69,6 @@ app.get('/location/:city/:street', async (req, res) => {
   let object = await Street.get(keys);
   if (object) {
     streetLayers(object);
-    /* res.send(`
-      ${h1(`${city} ${street}`)}
-      ${a(`/street/${object.id}/wbn`, 'WBN')}
-    `); */
     return;
   }
   const { Location, BoundingBox: { LowerLeft, UpperRight } } = result;
@@ -96,10 +91,6 @@ app.get('/location/:city/:street', async (req, res) => {
     upperRight,
   });
   streetLayers(object);
-  /* res.send(`
-    ${h1(`${city} ${street}`)}
-    ${a(`/street/${object.id}/wbn`, 'WBN')}
-  `); */
 });
 
 app.get('/street/:id/wbn', async (req, res) => {
@@ -128,9 +119,7 @@ app.get('/street/:id/wvb', async (req, res) => {
   const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
   const layer = 'WVB';
   const wfs = await WFS.getFeature({ bbox, layer });
-  // console.log(wfs);
   const roadConnections = await Promise.all(wfs.features.map((feature) => {
-    // console.log(feature);
     const { geometry, properties } = feature;
     const roadConnection = {
       id: parseInt(feature.id.split('.')[1], 10),
@@ -141,20 +130,7 @@ app.get('/street/:id/wvb', async (req, res) => {
       geometry: geometry.coordinates,
     };
     return RoadConnection.create(roadConnection);
-    /* return RoadConnection.findOrCreate({
-      where: { id: roadConnection.id },
-      defaults: roadConnection
-    })
-      .spread((roadConn, created) => {
-        console.log(roadConn.get({
-          plain: true,
-        }));
-        console.log(created);
-      }); */
   }));
-  /* wfs.features.forEach((feature) => {
-    Feature.create(feature);
-  }); */
   const width = upperRight.x - lowerLeft.x;
   const height = upperRight.y - lowerLeft.y;
   const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
@@ -171,19 +147,6 @@ app.get('/street/:id/wkn', async (req, res) => {
   const layer = 'WKN';
   const wfs = await WFS.getFeature({ bbox, layer });
   console.log(wfs);
-  /* const roadConnections = await Promise.all(wfs.features.map((feature) => {
-    // console.log(feature);
-    const { geometry, properties } = feature;
-    const roadConnection = {
-      id: parseInt(feature.id.split('.')[1], 10),
-      uidn: properties.UIDN,
-      oidn: properties.OIDN,
-      leftRoadId: properties.LSTRNMID,
-      rightRoadId: properties.RSTRNMID,
-      geometry: geometry.coordinates,
-    };
-    return RoadConnection.create(roadConnection);
-  })); */
   const width = upperRight.x - lowerLeft.x;
   const height = upperRight.y - lowerLeft.y;
   const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
@@ -198,8 +161,7 @@ app.get('/street/:id/wgo', async (req, res) => {
   const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
   const layer = 'WGO';
   const wfs = await WFS.getFeature({ bbox, layer });
-  // console.log(wfs);
-  const roadDivisions = await Promise.all(wfs.features.map(async (feature) => {
+  await Promise.all(wfs.features.map(async (feature) => {
     const { id, geometry, properties } = feature;
     const object = {
       id: parseInt(id.split('.')[1], 10),
@@ -210,10 +172,7 @@ app.get('/street/:id/wgo', async (req, res) => {
       typeLabel: properties.LBLTYPE,
       bbox: properties.bbox,
     };
-    // let roadDivision = await RoadDivision.findById(object.id);
-    // if (!roadDivision) {
     const roadDivision = await RoadDivision.create(object);
-    // }
     return roadDivision;
   }));
   const width = upperRight.x - lowerLeft.x;
