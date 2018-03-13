@@ -8,8 +8,8 @@ const SVG = ({ width, height, viewBox, children }) => (
 );
 
 SVG.defaultProps = {
-  width: 500,
-  height: 450,
+  width: 1000,
+  height: 1000,
 };
 
 SVG.propTypes = {

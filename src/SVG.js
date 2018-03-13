@@ -6,6 +6,12 @@ import Polygon from './components/Polygon';
 import Polyline from './components/Polyline';
 import Point from './components/Point';
 
+const STROKE = {
+  3: 'purple',
+  1: 'brown',
+  2: 'yellow',
+};
+
 const SVGGenerator = {
   fromWBN(features, viewBox) {
     const polygons = features.map(({ id, geometry, properties }) => {
@@ -62,9 +68,11 @@ const SVGGenerator = {
     const lines = features.map((roadDivision) => {
       const { id } = roadDivision;
       const points = roadDivision.geometry.coordinates;
+      const { TYPE } = roadDivision.properties;
       const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
+      const stroke = STROKE[TYPE];
       return (
-        <Polyline key={id} points={pointList} stroke="black" />
+        <Polyline key={id} points={pointList} stroke={stroke} />
       );
     });
     const svg = (
