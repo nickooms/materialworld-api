@@ -5,9 +5,13 @@ import Point from './src/Point';
 import Street from './src/Street';
 import HttpCache from './src/HttpCache';
 import Migrations from './src/Migrations';
-import dbPromise, { Feature, RoadConnection } from './src/DB';
+// import dbPromise, { Feature, RoadConnection } from './src/DB';
+import dbPromise from './src/DB';
 import WFS from './src/WFS';
 import SVG from './src/SVG';
+import Feature from './src/db/Feature';
+import RoadConnection from './src/db/RoadConnection';
+import RoadDivision from './src/db/RoadDivision';
 
 const PORT = 3333;
 
@@ -61,6 +65,7 @@ app.get('/location/:city/:street', async (req, res) => {
     ${a(`/street/${object.id}/wbn`, 'WBN')}
     ${a(`/street/${object.id}/wvb`, 'WVB')}
     ${a(`/street/${object.id}/wkn`, 'WKN')}
+    ${a(`/street/${object.id}/wgo`, 'WGO')}
   `);
   let object = await Street.get(keys);
   if (object) {
@@ -184,6 +189,38 @@ app.get('/street/:id/wkn', async (req, res) => {
   const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
   res.send(SVG.fromWKN(wfs.features, viewBox));
+});
+
+app.get('/street/:id/wgo', async (req, res) => {
+  const street = await Street.byId(req.params.id);
+  const json = await street.toJSON();
+  const { lowerLeft, upperRight } = json;
+  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
+  const layer = 'WGO';
+  const wfs = await WFS.getFeature({ bbox, layer });
+  // console.log(wfs);
+  const roadDivisions = await Promise.all(wfs.features.map(async (feature) => {
+    const { id, geometry, properties } = feature;
+    const object = {
+      id: parseInt(id.split('.')[1], 10),
+      geometry: geometry.coordinates,
+      uidn: properties.UIDN,
+      oidn: properties.OIDN,
+      typeId: properties.TYPE,
+      typeLabel: properties.LBLTYPE,
+      bbox: properties.bbox,
+    };
+    // let roadDivision = await RoadDivision.findById(object.id);
+    // if (!roadDivision) {
+    const roadDivision = await RoadDivision.create(object);
+    // }
+    return roadDivision;
+  }));
+  const width = upperRight.x - lowerLeft.x;
+  const height = upperRight.y - lowerLeft.y;
+  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(SVG.fromWGO(wfs.features, viewBox));
 });
 
 app.listen(PORT);

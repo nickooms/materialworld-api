@@ -3,7 +3,7 @@ import sqlite from 'sqlite';
 
 const DB_PATH = './database.sqlite';
 
-const OPTIONS = { timestamps: false };
+// const OPTIONS = { timestamps: false };
 
 export const sequelize = new Sequelize('database', null, null, {
   dialect: 'sqlite',
@@ -11,34 +11,34 @@ export const sequelize = new Sequelize('database', null, null, {
   operatorsAliases: false,
 });
 
-export const Feature = sequelize.define('feature', {
+/* export const Feature = sequelize.define('feature', {
   id: {
     type: Sequelize.STRING,
     primaryKey: true,
   },
   geometry: Sequelize.JSON,
   properties: Sequelize.JSON,
-}, OPTIONS);
+}, OPTIONS); */
 
-export const Road = sequelize.define('road', {
+/* export const Road = sequelize.define('road', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
   },
   name: Sequelize.STRING,
-}, OPTIONS);
+}, OPTIONS); */
 
-export const City = sequelize.define('city', {
+/* export const City = sequelize.define('city', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
   },
   name: Sequelize.STRING,
-}, OPTIONS);
+}, OPTIONS); */
 
-City.hasMany(Road, { as: 'Roads' });
+// City.hasMany(Road, { as: 'Roads' });
 
-export const RoadConnection = sequelize.define('road_connection', {
+/* export const RoadConnection = sequelize.define('road_connection', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -47,20 +47,20 @@ export const RoadConnection = sequelize.define('road_connection', {
   oidn: Sequelize.INTEGER,
   leftRoadId: {
     type: Sequelize.INTEGER,
-    /* references: {
+    references: {
       model: Road,
       key: 'id',
-    }, */
+    },
   },
   rightRoadId: {
     type: Sequelize.INTEGER,
-    /* references: {
+    references: {
       model: Road,
       key: 'id',
-    }, */
+    },
   },
   geometry: Sequelize.JSON,
-}, OPTIONS);
+}, OPTIONS); */
 
 // RoadConnection.hasOne(Road, { as: 'LeftRoad', foreignKey: 'leftRoadId' });
 // RoadConnection.hasOne(Road, { as: 'RightRoad', foreignKey: 'rightRoadId' });
