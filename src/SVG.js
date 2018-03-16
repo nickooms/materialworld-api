@@ -12,17 +12,66 @@ const STROKE = {
   2: 'yellow',
 };
 
+const FILL = {
+  wegsegment: '#CCCCCC',
+  kruispuntzone: '#B7B7B7',
+};
+
 const SVGGenerator = {
-  fromWBN(features, viewBox) {
+  polygon(feature) {
+    const { id, geometry, properties } = feature;
+    const { coordinates } = geometry;
+    const [points] = coordinates;
+    points.pop();
+    const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
+    return (
+      <Polygon key={id} points={pointList} fill={FILL[properties.LBLTYPE]} />
+    );
+  },
+  polyline(feature) {
+    const { id } = feature;
+    const points = feature.geometry.coordinates;
+    const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
+    const stroke = STROKE[feature.properties.TYPE] || 'black';
+    return (
+      <Polyline key={id} points={pointList} stroke={stroke} />
+    );
+  },
+  point(feature) {
+    const [x, y] = feature.geometry.coordinates;
+    const { id } = feature;
+    return (
+      <Point key={id} x={y} y={x} />
+    );
+  },
+  from(features, viewBox) {
+    const svg = (
+      <SVG viewBox={viewBox}>
+        {features.map((feature) => {
+          const featureType = feature.id.split('.')[0];
+          switch (featureType) {
+            case 'WBN':
+              return SVGGenerator.polygon(feature);
+            case 'WVB':
+            case 'WGO':
+              return SVGGenerator.polyline(feature);
+            case 'WKN':
+            default:
+              return SVGGenerator.point(feature);
+          }
+        })}
+      </SVG>
+    );
+    return ReactDOMServer.renderToStaticMarkup(svg);
+  },
+  /* fromWBN(features, viewBox) {
     const polygons = features.map(({ id, geometry, properties }) => {
-      const { LBLTYPE } = properties;
-      const fill = LBLTYPE === 'wegsegment' ? '#CCCCCC' : '#B7B7B7';
       const { coordinates } = geometry;
       const [points] = coordinates;
       points.pop();
       const pointList = points.map(([x, y]) => `${y},${x}`).join(' ');
       return (
-        <Polygon key={id} points={pointList} fill={fill} />
+        <Polygon key={id} points={pointList} fill={FILL[properties.LBLTYPE]} />
       );
     });
     const svg = (
@@ -81,7 +130,7 @@ const SVGGenerator = {
       </SVG>
     );
     return ReactDOMServer.renderToStaticMarkup(svg);
-  },
+  }, */
 };
 
 export default SVGGenerator;

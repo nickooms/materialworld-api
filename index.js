@@ -9,8 +9,8 @@ import dbPromise from './src/DB';
 import WFS from './src/WFS';
 import SVG from './src/SVG';
 import Feature from './src/db/Feature';
-import RoadConnection from './src/db/RoadConnection';
-import RoadDivision from './src/db/RoadDivision';
+// import RoadConnection from './src/db/RoadConnection';
+// import RoadDivision from './src/db/RoadDivision';
 
 const PORT = 3333;
 
@@ -18,6 +18,13 @@ const ROUTE = {
   migrate: 'DB Migration',
   location: 'Location',
 };
+
+const LAYERS = [
+  'wbn',
+  'wvb',
+  'wkn',
+  'wgo',
+];
 
 const streetLink = ({ city, street }) =>
   a(`/location/${city}/${street}`, `${street} ${city}`);
@@ -59,12 +66,9 @@ app.get('/location/:city/:street', async (req, res) => {
   const { FormattedAddress, LocationType } = result;
   const db = await dbPromise;
   const keys = { formattedAddress: FormattedAddress, locationType: LocationType };
-  const streetLayers = object => res.send(`
+  const streetLayers = ({ id }) => res.send(`
     ${h1(`${city} ${street}`)}
-    ${a(`/street/${object.id}/wbn`, 'WBN')}
-    ${a(`/street/${object.id}/wvb`, 'WVB')}
-    ${a(`/street/${object.id}/wkn`, 'WKN')}
-    ${a(`/street/${object.id}/wgo`, 'WGO')}
+    ${LAYERS.map(layer => a(`/street/${id}/${layer}`, layer.toUpperCase())).join('')}
   `);
   let object = await Street.get(keys);
   if (object) {
@@ -93,36 +97,35 @@ app.get('/location/:city/:street', async (req, res) => {
   streetLayers(object);
 });
 
-app.get('/street/:id/wbn', async (req, res) => {
-  const { id } = req.params;
+const dbFeature = async feature =>
+  await Feature.findById(feature.id)
+  || Feature.create(feature);
+
+app.get('/street/:id/:layer', async ({ params: { id, layer } }, res) => {
   const street = await Street.byId(id);
-  const json = await street.toJSON();
-  const { lowerLeft, upperRight } = json;
-  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
-  const layer = 'WBN';
+  const { lowerLeft: min, upperRight: max } = await street.toJSON();
+  const bbox = [min.x, min.y, max.x, max.y].join(',');
   const wfs = await WFS.getFeature({ bbox, layer });
-  wfs.features.forEach((feature) => {
-    Feature.create(feature);
-  });
-  const width = upperRight.x - lowerLeft.x;
-  const height = upperRight.y - lowerLeft.y;
-  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  const features = (await Promise.all(wfs.features
+    .map(dbFeature)))
+    .map(feature => feature.dataValues);
+  // console.log(features);
+  const width = max.x - min.x;
+  const height = max.y - min.y;
+  const viewBox = `${min.y} ${min.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
-  res.send(SVG.fromWBN(wfs.features, viewBox));
+  res.send(SVG.from(features, viewBox));
 });
 
-app.get('/street/:id/wvb', async (req, res) => {
-  const { id } = req.params;
-  const street = await Street.byId(id);
-  const json = await street.toJSON();
-  const { lowerLeft, upperRight } = json;
-  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
-  const layer = 'WVB';
-  const wfs = await WFS.getFeature({ bbox, layer });
-  const roadConnections = await Promise.all(wfs.features.map((feature) => {
-    const { geometry, properties } = feature;
+/* app.get('/street/:id/wvb', async (req, res) => {
+  const street = await Street.byId(req.params.id);
+  const { lowerLeft: min, upperRight: max } = await street.toJSON();
+  const bbox = [min.x, min.y, max.x, max.y].join(',');
+  const wfs = await WFS.getFeature({ bbox, layer: 'WVB' }); */
+/* const roadConnections = await Promise.all(wfs.features.map((feature) => {
+    const { id, geometry, properties } = feature;
     const roadConnection = {
-      id: parseInt(feature.id.split('.')[1], 10),
+      id: parseInt(id.split('.')[1], 10),
       uidn: properties.UIDN,
       oidn: properties.OIDN,
       leftRoadId: properties.LSTRNMID,
@@ -130,38 +133,32 @@ app.get('/street/:id/wvb', async (req, res) => {
       geometry: geometry.coordinates,
     };
     return RoadConnection.create(roadConnection);
-  }));
-  const width = upperRight.x - lowerLeft.x;
-  const height = upperRight.y - lowerLeft.y;
-  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  })); */
+/* const width = max.x - min.x;
+  const height = max.y - min.y;
+  const viewBox = `${min.y} ${min.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
-  res.send(SVG.fromWVB(roadConnections, viewBox));
-});
+  res.send(SVG.from(wfs.features, viewBox));
+}); */
 
-app.get('/street/:id/wkn', async (req, res) => {
-  const { id } = req.params;
-  const street = await Street.byId(id);
-  const json = await street.toJSON();
-  const { lowerLeft, upperRight } = json;
-  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
-  const layer = 'WKN';
-  const wfs = await WFS.getFeature({ bbox, layer });
-  console.log(wfs);
-  const width = upperRight.x - lowerLeft.x;
-  const height = upperRight.y - lowerLeft.y;
-  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
-  res.setHeader('Content-Type', 'image/svg+xml');
-  res.send(SVG.fromWKN(wfs.features, viewBox));
-});
-
-app.get('/street/:id/wgo', async (req, res) => {
+/* app.get('/street/:id/wkn', async (req, res) => {
   const street = await Street.byId(req.params.id);
-  const json = await street.toJSON();
-  const { lowerLeft, upperRight } = json;
-  const bbox = [lowerLeft.x, lowerLeft.y, upperRight.x, upperRight.y].join(',');
-  const layer = 'WGO';
-  const wfs = await WFS.getFeature({ bbox, layer });
-  await Promise.all(wfs.features.map(async (feature) => {
+  const { lowerLeft: min, upperRight: max } = await street.toJSON();
+  const bbox = [min.x, min.y, max.x, max.y].join(',');
+  const wfs = await WFS.getFeature({ bbox, layer: 'WKN' });
+  const width = max.x - min.x;
+  const height = max.y - min.y;
+  const viewBox = `${min.y} ${min.x} ${height} ${width}`;
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(SVG.from(wfs.features, viewBox));
+}); */
+
+/* app.get('/street/:id/wgo', async (req, res) => {
+  const street = await Street.byId(req.params.id);
+  const { lowerLeft: min, upperRight: max } = await street.toJSON();
+  const bbox = [min.x, min.y, max.x, max.y].join(',');
+  const wfs = await WFS.getFeature({ bbox, layer: 'WGO' }); */
+/* await Promise.all(wfs.features.map(async (feature) => {
     const { id, geometry, properties } = feature;
     const object = {
       id: parseInt(id.split('.')[1], 10),
@@ -174,13 +171,13 @@ app.get('/street/:id/wgo', async (req, res) => {
     };
     const roadDivision = await RoadDivision.create(object);
     return roadDivision;
-  }));
-  const width = upperRight.x - lowerLeft.x;
-  const height = upperRight.y - lowerLeft.y;
-  const viewBox = `${lowerLeft.y} ${lowerLeft.x} ${height} ${width}`;
+  })); */
+/* const width = max.x - min.x;
+  const height = max.y - min.y;
+  const viewBox = `${min.y} ${min.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
-  res.send(SVG.fromWGO(wfs.features, viewBox));
-});
+  res.send(SVG.from(wfs.features, viewBox));
+}); */
 
 app.listen(PORT);
 

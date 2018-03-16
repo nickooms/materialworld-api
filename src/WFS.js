@@ -14,7 +14,7 @@ const WFS = {
     const params = {
       ...WFS.params,
       request: 'GetFeature',
-      typeNames: `GRB:${layer}`,
+      typeNames: `GRB:${layer.toUpperCase()}`,
       bbox,
     };
     const url = `${WFS.URL}?${querystring.stringify(params)}`;
