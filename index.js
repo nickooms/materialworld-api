@@ -24,6 +24,11 @@ const LAYERS = [
   'wvb',
   'wkn',
   'wgo',
+  'gbg',
+  'gvl',
+  'gvp',
+  'tblgbgadr',
+  'gba',
 ];
 
 const streetLink = ({ city, street }) =>

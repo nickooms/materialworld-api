@@ -15,6 +15,10 @@ const STROKE = {
 const FILL = {
   wegsegment: '#CCCCCC',
   kruispuntzone: '#B7B7B7',
+  hoofdgebouw: '#BD3232',
+  bijgebouw: '#FA7D69',
+  afdak: 'green',
+  verdieping: 'blue',
 };
 
 const SVGGenerator = {
@@ -51,11 +55,16 @@ const SVGGenerator = {
           const featureType = feature.id.split('.')[0];
           switch (featureType) {
             case 'WBN':
+            case 'GBG':
+            case 'GBA':
               return SVGGenerator.polygon(feature);
             case 'WVB':
             case 'WGO':
+            case 'GVL':
               return SVGGenerator.polyline(feature);
             case 'WKN':
+            case 'GVP':
+            case 'TBLGBGADR':
             default:
               return SVGGenerator.point(feature);
           }

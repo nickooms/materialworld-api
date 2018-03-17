@@ -8,6 +8,13 @@ const Feature = sequelize.define('feature', {
   },
   geometry: JSON,
   properties: JSON,
-}, OPTIONS);
+}, {
+  getterMethods: {
+    layer() {
+      return this.id.split('.')[0];
+    },
+  },
+  ...OPTIONS,
+});
 
 export default Feature;
