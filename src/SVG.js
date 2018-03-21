@@ -52,8 +52,7 @@ const SVGGenerator = {
     const svg = (
       <SVG viewBox={viewBox}>
         {features.map((feature) => {
-          const featureType = feature.id.split('.')[0];
-          switch (featureType) {
+          switch (feature.layer) {
             case 'WBN':
             case 'GBG':
             case 'GBA':

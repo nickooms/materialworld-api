@@ -1,7 +1,6 @@
 import dbPromise from './DB';
 import Point from './Point';
 
-
 class Street {
   static GET = `SELECT * FROM Street WHERE
     formattedAddress = ? AND locationType = ?

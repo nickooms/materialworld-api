@@ -1,20 +1,14 @@
-import { STRING, JSON } from 'sequelize';
+import { INTEGER, STRING, JSON } from 'sequelize';
 import { OPTIONS, sequelize } from './sqlite';
 
 const Feature = sequelize.define('feature', {
   id: {
-    type: STRING,
+    type: INTEGER,
     primaryKey: true,
   },
+  layer: STRING,
   geometry: JSON,
   properties: JSON,
-}, {
-  getterMethods: {
-    layer() {
-      return this.id.split('.')[0];
-    },
-  },
-  ...OPTIONS,
-});
+}, OPTIONS);
 
 export default Feature;

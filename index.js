@@ -9,8 +9,6 @@ import dbPromise from './src/DB';
 import WFS from './src/WFS';
 import SVG from './src/SVG';
 import Feature from './src/db/Feature';
-// import RoadConnection from './src/db/RoadConnection';
-// import RoadDivision from './src/db/RoadDivision';
 
 const PORT = 3333;
 
@@ -103,8 +101,12 @@ app.get('/location/:city/:street', async (req, res) => {
 });
 
 const dbFeature = async feature =>
-  await Feature.findById(feature.id)
-  || Feature.create(feature);
+  await Feature.findById(parseInt(feature.id.split('.')[1], 10))
+  || Feature.create({
+    ...feature,
+    id: parseInt(feature.id.split('.')[1], 10),
+    layer: feature.id.split('.')[0],
+  });
 
 app.get('/street/:id/:layer', async ({ params: { id, layer } }, res) => {
   const street = await Street.byId(id);
@@ -120,6 +122,11 @@ app.get('/street/:id/:layer', async ({ params: { id, layer } }, res) => {
   const viewBox = `${min.y} ${min.x} ${height} ${width}`;
   res.setHeader('Content-Type', 'image/svg+xml');
   res.send(SVG.from(features, viewBox));
+});
+
+app.get('/buildings', async (req, res) => {
+  const buildings = await Feature.findAll({ where: { layer: 'GBG' } });
+  res.send(buildings.length);
 });
 
 /* app.get('/street/:id/wvb', async (req, res) => {
